@@ -1,0 +1,15 @@
+[Unit]
+Description=Unzipping the %i
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/local/bin/Unzipper_algo.sh
+Restart=always
+RestartSec=1
+KillMode=process
+IgnoreSIGPIPE=no
+RemainAfterExit=yes
+Environment="DISPLAY=:0" "XAUTHORITY=/home/abhyam/.Xauthority"
+
+[Install]
+WantedBy=multi-user.target
