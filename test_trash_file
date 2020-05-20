@@ -1,0 +1,26 @@
+#!/bin/bash
+# read -p "Enter the User name of your computer using command 'whoami' : " name
+# sudo sh -c "echo '/home/abhyam/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh '$'#' >> /var/spool/incron/"$name""
+# sudo sh -c "echo '/var/local/Unzipper_log_file.txt IN_MODIFY /usr/local/bin/Unzip_service_starter.sh' >> /var/spool/incron/"$name""
+# sudo cp /var/spool/incron/"$name" ./
+# sudo sed -i '/Unzipper_log_name_writer.sh/d'  /var/spool/incron/"$name"
+# sudo sed -i '/Unzip_service_starter.sh/d'  /var/spool/incron/"$name"
+# sudo cp /etc/incron.allow ./
+# sudo sed -i '/^abhyam*$/d' ./incron.allow
+# sudo nano ./incron.allow
+# cp ./Abhi.zip ./../Downloads/ &
+# # sleep 0.3
+# cp ./mumbai\ 2k19-20200515T191410Z-001.zip ./../Downloads/ &
+# # sleep 0.3
+# cp ./Resources.zip ./../Downloads/ &
+# bg
+# read -p "Do you want to upgrade your system? [y/n] " value
+# if [ $value == "y" ];then
+#   sudo apt-get -y upgrade
+# fi
+# if [ -e /etc/systemd/system/Unzipper@.service ];then
+#   sudo systemctl stop Unzipper@*
+# fi
+# read -p "Enter the User name of your computer using command 'whoami' : " name
+# echo ""
+# sed "s/USER/$name/g" ./Unzipper_algo.sh > ./.Unzipper_algo.sh
