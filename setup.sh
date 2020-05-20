@@ -36,7 +36,7 @@ sudo cp ./Unzipper@.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/Unzipper@.service
 echo "completing....80%"
 sudo cp ./Unzipper_log_file.txt /var/local/
-sudo chmod 664 /var/local/Unzipper_log_file.txt
+sudo chmod 777 /var/local/Unzipper_log_file.txt
 echo "completing....100%"
 sudo systemctl restart incron.service
 sudo systemctl daemon-reload
