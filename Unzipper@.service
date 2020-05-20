@@ -9,7 +9,7 @@ RestartSec=1
 KillMode=process
 IgnoreSIGPIPE=no
 RemainAfterExit=yes
-Environment="DISPLAY=:0" "XAUTHORITY=/home/abhyam/.Xauthority"
+Environment="DISPLAY=:0" "XAUTHORITY=/home/USER/.Xauthority"
 
 [Install]
 WantedBy=multi-user.target
