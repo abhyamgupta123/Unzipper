@@ -21,19 +21,21 @@ echo ""
 echo $name >> /etc/incron.allow
 sudo sh -c "echo '/home/'$name'/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh '$'#' >> /var/spool/incron/"$name""
 sudo sh -c "echo '/var/local/Unzipper_log_file.txt IN_MODIFY /usr/local/bin/Unzip_service_starter.sh' >> /var/spool/incron/"$name""
-sed "s/USER/$name/g" ./Unzipper_algo.sh > ./.Unzipper_algo.sh
 sudo cp ./Unzip_service_starter.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/Unzip_service_starter.sh
 echo "completing....20%"
 sudo cp ./Unzipper_log_name_writer.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/Unzipper_log_name_writer.sh
 echo "completing....40%"
+sed "s/USER/$name/g" ./Unzipper_algo.sh > ./.Unzipper_algo.sh
 sudo cp ./.Unzipper_algo.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/.Unzipper_algo.sh
 sudo mv /usr/local/bin/.Unzipper_algo.sh /usr/local/bin/Unzipper_algo.sh
 echo "completing....60%"
-sudo cp ./Unzipper@.service /etc/systemd/system/
-sudo chmod 644 /etc/systemd/system/Unzipper@.service
+sed "s/USER/$name/g" ./Unzipper@.service > ./.Unzipper@.service
+sudo cp ./.Unzipper@.service /etc/systemd/system/
+sudo chmod 644 /etc/systemd/system/.Unzipper@.service
+sudo mv /etc/systemd/system/.Unzipper@.service /etc/systemd/system/Unzipper@.service
 echo "completing....80%"
 sudo cp ./Unzipper_log_file.txt /var/local/
 sudo chmod 777 /var/local/Unzipper_log_file.txt
