@@ -47,5 +47,6 @@ sudo systemctl stop Unzipper@*.service
 cd -
 echo ""
 sudo rm ./.Unzipper_algo.sh
+sudo rm ./.Unzipper@.service
 echo "Initialised Sucessfully..."
 echo "Now you are ready to go..!!"
