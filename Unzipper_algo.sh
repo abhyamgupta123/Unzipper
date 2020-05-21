@@ -1,5 +1,7 @@
 #!/bin/bash
 unzip_var1=$(tail -1 /var/local/Unzipper_log_file.txt)
+unzip_var2=${unzip_var1//$".zip"/}
+
 killall notify-osd
 notify-send "UNZIPPER" "$unzip_var1 is created in Downloads"
 sleep 0.3
@@ -17,7 +19,6 @@ if grep -q "$SUBSTR" <<< "$unzip_var1"; then
     if grep -q "OK" <<< "$flag"; then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
-      unzip_var2=${unzip_var1//$".zip"/}
       mkdir /home/USER/Downloads/"$unzip_var2"
       unzip /home/USER/Downloads/"$unzip_var1" -d /home/USER/Downloads/"$unzip_var2"
       chmod -R 777 /home/USER/Downloads/"$unzip_var2"
