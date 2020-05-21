@@ -1,7 +1,6 @@
 #!/bin/bash
 unzip_var1=$(tail -1 /var/local/Unzipper_log_file.txt)
 unzip_var2=${unzip_var1//$".zip"/}
-
 killall notify-osd
 notify-send "UNZIPPER" "$unzip_var1 is created in Downloads"
 sleep 0.3
