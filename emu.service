@@ -1,0 +1,14 @@
+[Unit]
+Description=testing xterm
+ConditionPathExists=/etc/rc.local
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xterm
+StandardOutput=tty
+RemainAfterExit=yes
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/abhyam/.Xauthority"
+
+[Install]
+WantedBy=multi-user.target
