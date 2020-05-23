@@ -1,6 +1,8 @@
 #!/bin/bash
 read -p "Enter the User name of your computer using command 'whoami' : " name
 echo ""
+disp=$(systemctl --user show-environment | grep DISPLAY)
+xauth=$(systemctl --user show-environment | grep XAUTHORITY)
 echo "Updating your system..."
 echo ""
 sudo apt-get -y update
@@ -33,6 +35,8 @@ sudo chmod +x /usr/local/bin/.Unzipper_algo.sh
 sudo mv /usr/local/bin/.Unzipper_algo.sh /usr/local/bin/Unzipper_algo.sh
 echo "completing....60%"
 sed "s/USER/$name/g" ./Unzipper@.service > ./.Unzipper@.service
+sed -i "s/DISP/$disp/g" ./.Unzipper@.service
+sed -i "s/XAUTH/$xauth/g" ./.Unzipper@.service
 sudo cp ./.Unzipper@.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/.Unzipper@.service
 sudo mv /etc/systemd/system/.Unzipper@.service /etc/systemd/system/Unzipper@.service
