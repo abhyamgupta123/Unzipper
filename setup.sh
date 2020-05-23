@@ -4,8 +4,10 @@ echo ""
 systemctl --user import-environment
 disp=$(systemctl --user show-environment | grep DISPLAY)
 auth=$(systemctl --user show-environment | grep XAUTHORITY)
-echo $disp
-echo $auth
+echo "Environment Variables"
+echo " $disp"
+echo " $auth"
+echo ""
 echo "Updating your system..."
 echo ""
 sudo apt-get -y update
@@ -22,10 +24,6 @@ echo ""
 echo "Installing Sed...!!"
 echo ""
 sudo apt-get -y install sed
-echo ""
-echo "Installing gawk...!!"
-echo ""
-sudo apt-get install -y gawk
 echo ""
 sudo sh -c "echo $name >> /etc/incron.allow"
 sudo sh -c "echo '/home/'$name'/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh '$'#' >> /var/spool/incron/"$name""
