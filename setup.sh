@@ -4,7 +4,7 @@ echo ""
 systemctl --user import-environment
 disp=$(systemctl --user show-environment | grep DISPLAY)
 auth=$(systemctl --user show-environment | grep XAUTHORITY)
-echo "Environment Variables"
+echo "Environment Variables:"
 echo " $disp"
 echo " $auth"
 echo ""
