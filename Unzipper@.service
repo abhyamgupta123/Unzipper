@@ -10,7 +10,7 @@ KillMode=process
 IgnoreSIGPIPE=no
 RemainAfterExit=yes
 Environment="DISP"
-Environment="XAUTH"
+Environment="x_auth"
 
 [Install]
 WantedBy=multi-user.target
