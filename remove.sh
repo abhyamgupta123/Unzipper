@@ -20,7 +20,7 @@ sudo sed -i '/^'$name'*$/d' /etc/incron.allow
 sudo sed -i '/Unzipper_log_name_writer.sh/d'  /var/spool/incron/"$name"
 sudo sed -i '/Unzip_service_starter.sh/d'  /var/spool/incron/"$name"
 sudo systemctl daemon-reload
-cd ..
+cd /var
 sudo systemctl stop Unzipper*
 cd -
 echo ""
