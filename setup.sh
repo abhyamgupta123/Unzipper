@@ -3,9 +3,9 @@ read -p "Enter the User name of your computer using command 'whoami' : " name
 echo ""
 systemctl --user import-environment
 disp=$(systemctl --user show-environment | grep DISPLAY)
-xauth=$(systemctl --user show-environment | grep XAUTHORITY)
+auth=$(systemctl --user show-environment | grep XAUTHORITY)
 echo $disp
-echo $xauth
+echo $auth
 echo "Updating your system..."
 echo ""
 sudo apt-get -y update
@@ -23,6 +23,10 @@ echo "Installing Sed...!!"
 echo ""
 sudo apt-get -y install sed
 echo ""
+echo "Installing gawk...!!"
+echo ""
+sudo apt-get install -y gawk
+echo ""
 sudo sh -c "echo $name >> /etc/incron.allow"
 sudo sh -c "echo '/home/'$name'/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh '$'#' >> /var/spool/incron/"$name""
 sudo sh -c "echo '/var/local/Unzipper_log_file.txt IN_MODIFY /usr/local/bin/Unzip_service_starter.sh' >> /var/spool/incron/"$name""
@@ -38,8 +42,8 @@ sudo chmod +x /usr/local/bin/.Unzipper_algo.sh
 sudo mv /usr/local/bin/.Unzipper_algo.sh /usr/local/bin/Unzipper_algo.sh
 echo "completing....60%"
 # sed "s/USER/$name/g" ./Unzipper@.service > ./.Unzipper@.service
-sed "s/DISP/$disp/g" ./Unzipper@.service > ./.Unzipper@.service
-sed -i "s/x_auth/$xauth/g" ./.Unzipper@.service
+sed -e "s/DISP/$disp/g" -e "s~auth~$auth~" ./Unzipper@.service > ./.Unzipper@.service
+# sed  "s/x_auth/$xauth/g" ./.Unzipper@.service
 sudo cp ./.Unzipper@.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/.Unzipper@.service
 sudo mv /etc/systemd/system/.Unzipper@.service /etc/systemd/system/Unzipper@.service
