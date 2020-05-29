@@ -24,8 +24,8 @@
 # read -p "Enter the User name of your computer using command 'whoami' : " name
 # echo ""
 # sed "s/USER/$name/g" ./Unzipper_algo.sh > ./.Unzipper_algo.sh
-xvar=$XAUTHORITY
-xvar2=$DISPLAY
-echo $xvar
-echo $xvar2
-systemctl --user import-environment  
+# xvar=$XAUTHORITY
+# xvar2=$DISPLAY
+# echo $xvar
+# echo $xvar2
+# systemctl --user import-environment
