@@ -47,7 +47,8 @@ elif grep -q "$SUBSTR2" <<< "$unzip_var1" ; then
     if [ -f "/home/USER/Downloads/$unzip_var1.part" ] ; then
       continue
     fi
-    if [ -e /home/USER/Downloads/"$unzip_var1" ] ; then
+    sleep 0.3
+    if [ -f /home/USER/Downloads/"$unzip_var1" && ! -f "/home/USER/Downloads/$unzip_var1.part" ] ; then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
       mkdir /home/USER/Downloads/"$unzip_var3"
@@ -60,7 +61,7 @@ elif grep -q "$SUBSTR2" <<< "$unzip_var1" ; then
       killall notify-osd
       notify-send "UNZIPPER" "$unzip_var1 is extracted successfully..!!"
       break
-    elif [ ! -e /home/USER/Downloads/"$unzip_var1" ] ; then
+    elif [ ! -f /home/USER/Downloads/"$unzip_var1" ] ; then
       killall notify-osd
       notify-send "UNZIPPER" "tar file is deleted Unexpectedly..!!"
       break
