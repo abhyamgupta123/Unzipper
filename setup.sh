@@ -4,13 +4,13 @@ echo ""
 systemctl --user import-environment
 disp=$(systemctl --user show-environment | grep DISPLAY)
 auth=$(systemctl --user show-environment | grep XAUTHORITY)
-echo "Environment Variables:"
+echo "Environment Variables needed:"
 echo " $disp"
 echo " $auth"
 echo ""
 echo "Updating your system..."
 echo ""
-sudo apt-get -y update
+# sudo apt-get -y update
 echo ""
 read -p "Do you want to upgrade your system? [y/n] " value
 if [ $value == "y" ];then
