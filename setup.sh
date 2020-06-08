@@ -10,7 +10,7 @@ echo " $auth"
 echo ""
 echo "Updating your system..."
 echo ""
-# sudo apt-get -y update
+sudo apt-get -y update
 echo ""
 read -p "Do you want to upgrade your system? [y/n] " value
 if [ $value == "y" ];then
