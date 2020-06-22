@@ -11,6 +11,8 @@ IgnoreSIGPIPE=no
 RemainAfterExit=yes
 Environment="DISP"
 Environment="auth"
+Environment="var_home"
+Environment="var_user"
 
 [Install]
 WantedBy=multi-user.target
