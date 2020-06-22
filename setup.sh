@@ -4,9 +4,13 @@ echo ""
 systemctl --user import-environment
 disp=$(systemctl --user show-environment | grep DISPLAY)
 auth=$(systemctl --user show-environment | grep XAUTHORITY)
+var_home_setup="HOME=/home/$name"
+var_user_setup="USER=$name"
 echo "Environment Variables needed:"
 echo " $disp"
 echo " $auth"
+echo " $var_home_setup"
+echo " $var_user_setup"
 echo ""
 echo "Updating your system..."
 echo ""
@@ -40,7 +44,7 @@ sudo chmod +x /usr/local/bin/.Unzipper_algo.sh
 sudo mv /usr/local/bin/.Unzipper_algo.sh /usr/local/bin/Unzipper_algo.sh
 echo "completing....60%"
 # sed "s/USER/$name/g" ./Unzipper@.service > ./.Unzipper@.service
-sed -e "s/DISP/$disp/g" -e "s~auth~$auth~" ./Unzipper@.service > ./.Unzipper@.service
+sed -e "s~DISP~$disp~" -e "s~auth~$auth~" -e "s~var_user~$var_user_setup~" -e "s~var_home~$var_home_setup~" ./Unzipper@.service > ./.Unzipper@.service
 # sed  "s/x_auth/$xauth/g" ./.Unzipper@.service
 sudo cp ./.Unzipper@.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/.Unzipper@.service
