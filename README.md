@@ -1,6 +1,8 @@
 # Unzipper
 This is utility for ubuntu designed to automaticallu extact .zip, .tar or any other compressed files downloaded from browsers in Download folder of user. This has been tested in the linux based systems running systemd and in ubuntu 16.04 and above.
 
+<br>
+
 ## Installation
 >***Run each and every command without sudo and give the sudo password when it asks or prompts.***
 
@@ -16,7 +18,7 @@ To install this utility in your system do the following:-
   ```
   $ ./setup.sh
   ```
-or if it doesn't works then try:-
+  or if it doesn't works then try:-
   ```
   $ bash ./setup.sh
   ```
@@ -42,7 +44,7 @@ To completely remove the Utility from your system do the following:-
   ```
   $ ./remove.sh
   ```
-or if it doesn't works then try:-
+  or if it doesn't works then try:-
   ```
   $ bash ./remove.sh
   ```
