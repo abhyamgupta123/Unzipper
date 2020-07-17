@@ -24,6 +24,7 @@ $ bash ./setup.sh
 >In case of any errors during Installation please refer to the Troubleshoot section of this page.
 
 <br>
+
 ## Removing Utility
 >***Run each and every command without sudo and give the sudo password when it asks or prompts.***
 >Steps wil  l be same as Installation steps process only the file will be different.
