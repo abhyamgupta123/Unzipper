@@ -31,15 +31,15 @@ To completely remove the Utility from your system do the following:-
 
 - Open the terminal in the folder directory i.e. where you cloned or downloaded this git repo.
 - Give file remove.sh executable permission.
-&nbsp ```
- $ chmod +x ./remove.sh
- ```
+```
+$ chmod +x ./remove.sh
+```
  
 - Run <mark> ** *(WITHOUT SUDO COMMAND)* ** </mark> the file to completely remove the Utility from your system.
 
-&nbsp ```
- $ ./remove.sh
- ```
+```
+$ ./remove.sh
+```
 or if it doesn't works then try:-
 ```
 $ bash ./remove.sh
