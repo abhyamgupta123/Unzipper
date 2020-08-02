@@ -1,5 +1,5 @@
 # Unzipper
-This is utility for ubuntu designed to automaticallu extact .zip, .tar or any other compressed files downloaded from browsers in Download folder of user. This has been tested in the linux based systems running systemd and in ubuntu 16.04 and above.
+This is utility designed for linux based systems to automatically extact .zip, .tar or any other compressed files downloaded from browsers in Download folder of user. This has been tested in the linux based systems running systemd and in ubuntu 16.04 and above.
 
 <br>
 
@@ -34,7 +34,7 @@ To install this utility in your system do the following:-
 
 To completely remove the Utility from your system do the following:-
 
-- Open the terminal in the folder directory i.e. where you cloned or downloaded this git repo.
+- Open the terminal in the folder directory i.e. where you cloned or downloaded this Git repo.
 - Give file remove.sh executable permission.
   ```
   $ chmod +x ./remove.sh
