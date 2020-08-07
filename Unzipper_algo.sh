@@ -14,6 +14,7 @@ if grep -q "$SUBSTR1" <<< "$unzip_var1" ; then
 
   while true ; do
     if [ -f "/home/USER/Downloads/$unzip_var1.part" ];then
+      sleep 2
       continue
     fi
     flag=$(zip -T /home/USER/Downloads/"$unzip_var1")
@@ -23,7 +24,7 @@ if grep -q "$SUBSTR1" <<< "$unzip_var1" ; then
       mkdir /home/USER/Downloads/"$unzip_var2"
       unzip /home/USER/Downloads/"$unzip_var1" -d /home/USER/Downloads/"$unzip_var2"
       chmod -R 777 /home/USER/Downloads/"$unzip_var2"
-      zenity --question --text='Do you want to delete the existing Archived file ? '
+      zenity --question --text='Do you want to delete the existing Archived file '$unzip_var1' ? '
       if [ $? = 0 ] ; then
         rm /home/USER/Downloads/"$unzip_var1"
       fi
