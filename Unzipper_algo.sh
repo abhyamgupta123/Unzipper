@@ -22,7 +22,7 @@ if grep -q "$SUBSTR1" <<< "$unzip_var1" ; then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
       mkdir /home/USER/Downloads/"$unzip_var2"
-      chmod 777 /home/USER/Downloads/"$unzip_var2"
+      #chmod 777 /home/USER/Downloads/"$unzip_var2"
       unzip /home/USER/Downloads/"$unzip_var1" -d /home/USER/Downloads/"$unzip_var2"
       chmod -R 777 /home/USER/Downloads/"$unzip_var2"
       zenity --question --text='Do you want to delete the existing Archived file '$unzip_var1' ? '
@@ -54,7 +54,7 @@ elif grep -q "$SUBSTR2" <<< "$unzip_var1" ; then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
       mkdir /home/USER/Downloads/"$unzip_var3"
-      chmod 777 /home/USER/Downloads/"$unzip_var3"
+      #chmod 777 /home/USER/Downloads/"$unzip_var3"
       tar -xf /home/USER/Downloads/"$unzip_var1" -C /home/USER/Downloads/"$unzip_var3"
       chmod -R 777 /home/USER/Downloads/"$unzip_var3"
       zenity --question --text='Do you want to delete the existing Archived file ? '
