@@ -32,7 +32,7 @@ To install this utility:-
 <br>
 
 ## Removing Utility
->***Run each and every command without sudo and give the sudo password when it asks or prompts***.
+>***Run each and every command without sudo and give the sudo password only when it asks or prompts***.
 
 >Steps wil  l be same as Installation steps process only the file will be different.
 
@@ -56,4 +56,21 @@ To completely remove the Utility:-
   $ bash ./remove.sh
   ```
 
-  
+### Working of code files
+- **Unzipper@.service**
+
+  *<p>This is system service file which is responsible for triggering the script to run when invoked by some command.</p>
+  *<p>it uses various envornment variables to function properly in a GUI interactive mode (like to display notifications).</p>
+  <p>the variables are:-
+  - Xauthority - Responsible for displaying messages or notifications in the User session (plays a vital role in Xserver GUI handling tasks).
+  - User - Helps in getting required file access priviledges.
+  - Display - Responsible for Displaying stuffs related to GUI in correct user session, if set different then can able to show in VNC related sessions too (*Default - DISPLAY=:0.0* ).
+  - HOME - Another variable to make Utility work properly.
+
+  *<p>Its main role is to run the main script which contains all the algorithm to perform the task of Unzipping.</p>*
+
+- **Unzipper_algo.sh**
+
+    *<p>This shell file contains all primary algo to detect and determing type of file and to Unzip it.</p>*
+
+    <u>**This works like**</u> - It takes the name of currently downloaded Archived file as input from `Unzipper_log_file` by reading last line of the file and then determines type of file followed by extraction.
