@@ -114,6 +114,7 @@ To completely remove the Utility:-
   This file will be copied to it's required location(`/var/local/Unzipper_log_file.txt`) by `setup.sh` at time of installation.
 
 <br>
-> Majour browser have their Download path `/home/<USER>/Downloads` as default locations to download archived or any other files. That's why this Utility is set up to Unarchive the files at this path only.
+
+> Majour browser have their Download path /home/<USER>/Downloads as default locations to download archived or any other files. That's why this Utility is set up to Unarchive the files at this path only.
 
 >You can manually configure it's working path according to your convenience from its script if you have enough knowledge of its working.
