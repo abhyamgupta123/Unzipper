@@ -220,9 +220,9 @@ If thix utility doesn't works in your system then check the following paths and 
   * Make sure the file `Unzipper_algo.sh` at `/usr/local/bin/Unzipper_algo.sh` contains the correct userame variable in it at all the places, yoou can take help from the original file present in this repo by the same name, where `$name` must be replaced by your system username at all places in your system file at path `/usr/local/bin/Unzipper_algo.sh`.
   To obtain system username :-
 
-  ```
-  $ whoami
-  ```
+    ```
+    $ whoami
+    ```
 
   Check if problem is solved...!!
 
@@ -233,4 +233,4 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart incron.service
 $ sudo reboot
 ```
-*Hope this may solve your problem....*
+*Hope this may help you....*
