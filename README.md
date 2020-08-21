@@ -59,15 +59,15 @@ To completely remove the Utility:-
 ### Working of code files
 - **Unzipper@.service file**
 
-  *This is system service file which is responsible for triggering the script to run when invoked by some command.
-  *it uses various envornment variables to function properly in a GUI interactive mode (like to display notifications).
+  This is system service file which is responsible for triggering the script to run when invoked by some command.
+  it uses various envornment variables to function properly in a GUI interactive mode (like to display notifications).
   the variables are:-
   - Xauthority - Responsible for displaying messages or notifications in the User session (plays a vital role in Xserver GUI handling tasks).
   - User - Helps in getting required file access priviledges.
   - Display - Responsible for Displaying stuffs related to GUI in correct user session, if set different then can able to show in VNC related sessions too (*Default - DISPLAY=:0.0* ).
   - HOME - Another variable to make Utility work properly.
 
-  *<p>Its main role is to run the main script which contains all the algorithm to perform the task of Unzipping.</p>*
+  Its main role is to run the main script which contains all the algorithm to perform the task of Unzipping.
 
 - **Unzipper_algo.sh**
 
