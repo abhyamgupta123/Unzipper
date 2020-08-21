@@ -131,13 +131,13 @@ If thix utility doesn't works in your system then check the following paths and 
     ```
     $ sudo nano /etc/systemd/system/.Unzipper@.service
     ```
-    Now note the enviornment variables by executing commands in other fresh terminal by `Ctrl+Alt+T`.
+  * Now note the enviornment variables by executing commands in other fresh terminal by `Ctrl+Alt+T`.
     ```
     $ systemctl --user import-environment
     $ systemctl --user show-environment | grep DISPLAY
     $ systemctl --user show-environment | grep XAUTHORITY
     ```
-    and edit `/etc/systemd/system/.Unzipper@.service` as `Environment="DISPLAY=<Disaplay environment variable>"` and `Environment="XAUTHORITY=<xauth enviornment variabl` now replace <> fields with the data obtained by executing above commands at their respective places.
+  * edit `/etc/systemd/system/.Unzipper@.service` as `Environment="DISPLAY=<Disaplay environment variable>"` and `Environment="XAUTHORITY=<xauth enviornment variabl` now replace <> fields with the data obtained by executing above commands at their respective places.
 
     Finally, reload the daemon by:-
     ```
@@ -162,6 +162,79 @@ If thix utility doesn't works in your system then check the following paths and 
   $ ./remove.sh
   $ ./setup.sh
   ```
+
   Check if problem is solved...!!
 
--
+- Check if your user name is there or not in file `/etc/incron.allow`.
+  if not then execute command:
+  ```
+  $ whoami
+  ```
+  note your system user name and by using your favourite editor edit `/etc/incron.allow` like with nano:-
+  ```
+  $ sudo nano /etc/incron.allow
+  ```
+  now add your obtained username after executing command to last line of file and save and exit by `Ctrl+x` and then press `y` followed by `Enter`.
+
+  Now reload the incron service by:-
+  ```
+  $ sudo systemctl restart incron.service
+  ```
+
+  Check if problem is solved...!!
+
+- Maybe your incrontab table is not upgraded as desired to be.
+  To ensure its table is up-to-date, please manually configure it by following steps:-
+
+  * Enter below command in fresh termianl (`Ctrl+Alt+t`) to check the incrontable.
+    ```
+    $ incrontab -l
+    ```
+    if the output contains something exactly like-
+    `/home/<USER>/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh $ #` and
+    `/var/local/Unzipper_log_file.txt IN_MODIFY /usr/local/bin/Unzip_service_starter.sh`
+    then there is no need to modify this, and follow other troubleshooting procedure.
+
+    Here in place of <USER> there shoud be your system name obtained by:-
+    ```
+    $ whoami
+    ```
+
+  * If the output is not like above mentioned test then edit the incrontable by executing:-
+    ```
+    $ incrontab -e
+    ```
+    now paste the same thing as mentioned above in the editor opened in terminal i.e paste `/home/<USER>/Downloads IN_CREATE /usr/local/bin/Unzipper_log_name_writer.sh $ #` and
+    `/var/local/Unzipper_log_file.txt IN_MODIFY /usr/local/bin/Unzip_service_starter.sh` in the editor.
+
+    save it and exit. In case of nano editor do `Ctrl+x` press `y` and `Enter key`.
+
+    **_Here must replace the <USER> keyword with your system user name as obtained in previous step._**
+
+  * Now at last reload the incron daemon and service files by:-
+    ```
+    $ sudo systemctl restart incron.service
+    $ sudo systemctl daemon-reload
+    ```
+
+  Check if problem is solved...!!
+
+
+  * Make sure the file `Unzipper_algo.sh` at `/usr/local/bin/Unzipper_algo.sh` contains the correct userame variable in it at all the places, yoou can take help from the original file present in this repo by the same name, where `$name` must be replaced by your system username at all places in your system file at path `/usr/local/bin/Unzipper_algo.sh`.
+  To obtain system username :-
+
+  ```
+  $ whoami
+  ```
+
+  Check if problem is solved...!!
+
+<br><br>
+After doing all the above steps please make sure to first restart all services and configuration files and also reboot the system if possible. To do so:-
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart incron.service
+$ sudo reboot
+```
+<br>
+_Hope this may solve your problem...._
