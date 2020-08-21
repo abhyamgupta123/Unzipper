@@ -28,7 +28,7 @@ To install this utility:-
   $ bash ./setup.sh
   ```
 
->In case of any errors during Installation please refer to the Troubleshoot section of this page.
+>In case of any errors during Installation please refer to the [Troubleshoot](#Troubleshooting) section of this page.
 
 <hr>
 
