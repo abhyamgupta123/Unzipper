@@ -30,7 +30,6 @@ To install this utility:-
 
 >In case of any errors during Installation please refer to the Troubleshoot section of this page.
 
-<br>
 <hr>
 
 ## Removing Utility
@@ -58,7 +57,6 @@ To completely remove the Utility:-
   $ bash ./remove.sh
   ```
 
-<br>
 <hr>
 
 ### Working of code files
@@ -118,3 +116,52 @@ To completely remove the Utility:-
 >***Majour browser have their Download path '/home/<USER>/Downloads' as default locations to download archived or any other files. That's why this Utility is set up to Unarchive the files at this path only.***
 
 >You can manually configure it's working path according to your convenience from its script if you have enough knowledge of its working.
+
+<hr>
+
+## Troubleshooting
+
+If thix utility doesn't works in your system then check the following paths and files for troubleshooting:-
+
+- First check if the `setup.sh` file is executed with or without `sudo` permission.
+  As mentioned before **Don't run setup.sh** with sudo priviledges as this results in setting up wrong enviornment variables as you can see in the service file.
+
+  To solve this:-
+  * Go to `/etc/systemd/system/.Unzipper@.service` and edit it with your favourite editor as like nano:-
+    ```
+    $ sudo nano /etc/systemd/system/.Unzipper@.service
+    ```
+    Now note the enviornment variables by executing commands in other fresh terminal by `Ctrl+Alt+T`.
+    ```
+    $ systemctl --user import-environment
+    $ systemctl --user show-environment | grep DISPLAY
+    $ systemctl --user show-environment | grep XAUTHORITY
+    ```
+    and edit `/etc/systemd/system/.Unzipper@.service` as `Environment="DISPLAY=<Disaplay environment variable>"` and `Environment="XAUTHORITY=<xauth enviornment variabl` now replace <> fields with the data obtained by executing above commands at their respective places.
+
+    Finally, reload the daemon by:-
+    ```
+    $ sudo systemctl daemon-reload
+    ```
+
+  Check if problem is solved...!!
+
+
+- Make sure your system is up-to-date. To do so execute:-
+  ```
+  $ sudo apt-get update; sudo apt-get upgrade
+  $ sudo apt-get autoremove; sudo apt-get autoclean
+  ```
+  after this install all the required packages mentioned in the `setup.sh` file while execution namely `Incrontab` and `sed` to do so execute:-
+  ```
+  $ sudo apt-get -y install incron
+  $ sudo apt-get -y install sed
+  ```
+  Now reinstall utility:-
+  ```
+  $ ./remove.sh
+  $ ./setup.sh
+  ```
+  Check if problem is solved...!!
+
+-
