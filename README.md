@@ -145,7 +145,7 @@ If thix utility doesn't works in your system then check the following paths and 
     ```
 
   Check if problem is solved...!!
-  <br>
+
   
 - Make sure your system is up-to-date. To do so execute:-
   ```
