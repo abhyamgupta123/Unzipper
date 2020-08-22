@@ -38,7 +38,7 @@ To install this utility:-
 >Steps wil  l be same as Installation steps process only the file will be different.
 
 To completely remove the Utility:-
-- Clone this repo at desied place and go to this directory.
+- Clone this repo at desired place and go to this directory.
   ```
   $ git clone https://github.com/abhyamgupta123/Unzipper
   $ cd Unzipper
@@ -75,7 +75,7 @@ To completely remove the Utility:-
   The variables are:-
   - Xauthority - Responsible for displaying messages or notifications in the User session (plays a vital role in Xserver GUI handling tasks).
   - User - Helps in getting required file access priviledges.
-  - Display - Responsible for Displaying stuffs related to GUI in correct user session, if set different then it can able to show notifications in VNC related sessions too otherwise it is disabled by deafult. Configure is behavious by changing this enviornment variable according to your session variable.(*Default - DISPLAY=:0.0* ).
+  - Display - Responsible for Displaying stuffs related to GUI in correct user session, if set different then it can able to show notifications in VNC related sessions too otherwise it is disabled by default. Configure is behaviours by changing this enviornment variable according to your session variable.(*Default - DISPLAY=:0.0* ).
   - HOME - Another variable to make Utility work properly.
 
   Its main role is to run the main script which contains all the algorithm to perform the task of Unzipping.
@@ -121,7 +121,7 @@ To completely remove the Utility:-
 
 ## Troubleshooting
 
-If this utility doesn't works in your system then check the following paths and files for troubleshooting:-
+If this utility doesn't work in your system then check the following paths and files for troubleshooting:-
 
 - First check if the `setup.sh` file is executed with or without `sudo` permission.
   As mentioned before **Don't run setup.sh** with sudo priviledges as this results in setting up wrong enviornment variables as you can see in the service file.
