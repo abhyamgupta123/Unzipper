@@ -37,6 +37,9 @@ echo "Installing Sed...!!"
 echo ""
 sudo apt-get -y install sed
 echo ""
+echo "Installing dtrx system tool..!!"
+sudo apt-get install dtrx
+echo ""
 
 
 #CONFIGURING INCRONTAB DEAMON:-
