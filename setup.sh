@@ -14,7 +14,7 @@ echo " $auth"
 echo " $var_home_setup"
 echo " $var_user_setup"
 echo ""
-
+ 
 
 #Updating AND UPGRADING SYSTEM:-
 echo "Updating your system..."
