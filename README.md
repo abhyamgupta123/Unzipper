@@ -152,10 +152,11 @@ If this utility doesn't work in your system then check the following paths and f
   $ sudo apt-get update; sudo apt-get upgrade
   $ sudo apt-get autoremove; sudo apt-get autoclean
   ```
-  after this install all the required packages mentioned in the `setup.sh` file while execution namely `Incrontab` and `sed`, to do so execute:-
+  after this install all the required packages mentioned in the `setup.sh` file while execution namely `Incrontab`, `sed` and `dtrx`, to do so execute:-
   ```
   $ sudo apt-get -y install incron
   $ sudo apt-get -y install sed
+  $ sudo apt-get install dtrx
   ```
   Now reinstall utility:-
   ```
