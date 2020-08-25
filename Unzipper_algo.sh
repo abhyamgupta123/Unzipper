@@ -61,7 +61,7 @@ elif grep -q "$SUBSTR2" <<< "$unzip_var1" ; then
       #chmod 777 /home/abhyam/Downloads/"$unzip_var3"
       #tar -xf /home/abhyam/Downloads/"$unzip_var1" -C /home/abhyam/Downloads/"$unzip_var3"
       chmod -R 777 /home/abhyam/Downloads/"$unzip_var3"
-      zenity --question --text='Do you want to delete the existing Archived file ? '
+      zenity --question --text="Do you want to delete the existing Archived file '$unzip_var1' ?"
       if [ $? = 0 ] ; then
         rm /home/abhyam/Downloads/"$unzip_var1"
       fi
