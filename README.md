@@ -129,7 +129,7 @@ If this utility doesn't work in your system then check the following paths and f
   To solve this:-
   * Go to `/etc/systemd/system/.Unzipper@.service` and edit it with your favourite editor as like nano:-
     ```
-    $ sudo nano /etc/systemd/system/.Unzipper@.service
+    $ sudo nano /etc/systemd/system/Unzipper@.service
     ```
   * Now note the enviornment variables by executing commands in other fresh terminal by `Ctrl+Alt+T`.
     ```
