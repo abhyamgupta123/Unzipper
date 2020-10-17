@@ -13,21 +13,21 @@ if grep -q "$SUBSTR1" <<< "$unzip_var1" ; then
     sleep 0.2
 
   while true ; do
-    if [ -f "/home/abhyam/Downloads/$unzip_var1.part" ];then
+    if [ -f "/home/USER/Downloads/$unzip_var1.part" ];then
       sleep 2
       continue
     fi
-    flag=$(zip -T /home/abhyam/Downloads/"$unzip_var1")
+    flag=$(zip -T /home/USER/Downloads/"$unzip_var1")
     if grep -q "OK" <<< "$flag"; then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
-      mkdir /home/abhyam/Downloads/"$unzip_var2"
-      #chmod 777 /home/abhyam/Downloads/"$unzip_var2"
-      unzip /home/abhyam/Downloads/"$unzip_var1" -d /home/abhyam/Downloads/"$unzip_var2"
-      chmod -R 777 /home/abhyam/Downloads/"$unzip_var2"
+      mkdir /home/USER/Downloads/"$unzip_var2"
+      #chmod 777 /home/USER/Downloads/"$unzip_var2"
+      unzip /home/USER/Downloads/"$unzip_var1" -d /home/USER/Downloads/"$unzip_var2"
+      chmod -R 777 /home/USER/Downloads/"$unzip_var2"
       zenity --question --text="Do you want to delete the existing Archived file '$unzip_var1' ?"
       if [ $? = 0 ] ; then
-        rm /home/abhyam/Downloads/"$unzip_var1"
+        rm /home/USER/Downloads/"$unzip_var1"
       fi
       killall notify-osd
       notify-send "UNZIPPER" "$unzip_var1 is extracted successfully..!!"
@@ -47,29 +47,29 @@ elif grep -q "$SUBSTR2" <<< "$unzip_var1" ; then
   sleep 0.2
 
   while true ; do
-    if [ -f "/home/abhyam/Downloads/$unzip_var1.part" ]; then
+    if [ -f "/home/USER/Downloads/$unzip_var1.part" ]; then
       continue
     fi
     sleep 2
-    dtrx -l /home/abhyam/Downloads/"$unzip_var1" > /dev/null 2>&1
-    if [ -f /home/abhyam/Downloads/"$unzip_var1" ]; then 
-      if [ $? -ne 1 ];then 
+    dtrx -l /home/USER/Downloads/"$unzip_var1" > /dev/null 2>&1
+    if [ -f /home/USER/Downloads/"$unzip_var1" ]; then 
+      if [ $? -ne 1 ];then
       killall notify-osd
       notify-send "UNZIPPER" "Unzipping $unzip_var1"
-      cd /home/abhyam/Downloads/
-      dtrx -no /home/abhyam/Downloads/"$unzip_var1"
-      #chmod 777 /home/abhyam/Downloads/"$unzip_var3"
-      #tar -xf /home/abhyam/Downloads/"$unzip_var1" -C /home/abhyam/Downloads/"$unzip_var3"
-      chmod -R 777 /home/abhyam/Downloads/"$unzip_var3"
+      cd /home/USER/Downloads/
+      dtrx -no /home/USER/Downloads/"$unzip_var1"
+      #chmod 777 /home/USER/Downloads/"$unzip_var3"
+      #tar -xf /home/USER/Downloads/"$unzip_var1" -C /home/USER/Downloads/"$unzip_var3"
+      chmod -R 777 /home/USER/Downloads/"$unzip_var3"
       zenity --question --text="Do you want to delete the existing Archived file '$unzip_var1' ?"
       if [ $? = 0 ] ; then
-        rm /home/abhyam/Downloads/"$unzip_var1"
+        rm /home/USER/Downloads/"$unzip_var1"
       fi
       killall notify-osd
       notify-send "UNZIPPER" "$unzip_var1 is extracted successfully..!!"
       break
       fi
-    elif [ ! -f /home/abhyam/Downloads/"$unzip_var1" ] ; then
+    elif [ ! -f /home/USER/Downloads/"$unzip_var1" ] ; then
       killall notify-osd
       notify-send "UNZIPPER" "tar file is deleted Unexpectedly..!!"
       break
